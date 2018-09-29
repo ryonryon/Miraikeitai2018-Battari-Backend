@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b383df2-3ef0-43fd-a0cd-4cbbee37ebd2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.python-version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/battari/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/battari/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/battari/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/battari/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/battari/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/battari/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/battari/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/battari_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/battari_backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/battari_backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/battari_backend/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/battari/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/battari/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,8 +33,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/battari/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -64,8 +50,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/battari/models.py" />
         <option value="$PROJECT_DIR$/battari_backend/settings.py" />
+        <option value="$PROJECT_DIR$/battari/models.py" />
       </list>
     </option>
   </component>
@@ -220,8 +206,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/battari/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
