@@ -4,9 +4,9 @@ from django.contrib.auth.models import AbstractBaseUser
 
 # Create your models here.
 class User(models.Model):
-    displayname = models.CharField(max_length=30)
-    password = models.CharField(max_length=30)
-    salt = models.CharField(max_length=30)
+    displayname = models.CharField(max_length=20)
+    password = models.CharField(max_length=20)
+    salt = models.CharField(max_length=10)
     icon = models.ImageField(null=True)
     current_listening_track = models.CharField()
     comment = models.CharField(null=True)
