@@ -12,3 +12,9 @@ class User(models.Model):
     comment = models.CharField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class Location(models.Model):
+    latitude = models.DecimalField(max_digits=9, decimal_places=6)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    updated_at = models.DateTimeField(auto_now=True)
