@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractBaseUser
 
 # Create your models here.
 class User(models.Model):
+    id = models.BigIntegerField()
     displayname = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
     salt = models.CharField(max_length=10)
@@ -15,6 +16,13 @@ class User(models.Model):
 
 
 class Location(models.Model):
+    id = models.BigIntegerField()
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class Follow(models.Model):
+    id = models.BigIntegerField()
+    following_user_id = models.BigIntegerField()
+    follower_user_id = models.BigIntegerField()
