@@ -26,3 +26,23 @@ class Follow(models.Model):
     id = models.BigIntegerField()
     following_user_id = models.BigIntegerField()
     follower_user_id = models.BigIntegerField()
+
+
+class Artist(models.Model):
+    id = models.BigIntegerField()
+    Spotify_id = models.BigIntegerField()
+    name = models.CharField(max_length=100)
+
+
+class Track(models.Model):
+    id = models.BigIntegerField()
+    spotify_id = models.BigIntegerField()
+    name = models.CharField(max_length=255)
+    player_url = models.TextField()
+
+
+class Album(models.Model):
+    id = models.BigIntegerField()
+    spotify_id = models.BigIntegerField()
+    name = models.CharField(max_length=255)
+    release_date = models.DateTimeField(auto_now_add=True)
