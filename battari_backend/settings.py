@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'battari',  # added
+    'rest_framework'  # added
 ]
 
 MIDDLEWARE = [
@@ -74,10 +76,22 @@ WSGI_APPLICATION = 'battari_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# Mysql settings
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'battari',
+        'USER': 'root',
+        # 'PASSWORD': db_passwd,
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
