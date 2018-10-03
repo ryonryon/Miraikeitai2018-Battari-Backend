@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'battari',  # added
+    'rest_framework'  # added
 ]
 
 MIDDLEWARE = [

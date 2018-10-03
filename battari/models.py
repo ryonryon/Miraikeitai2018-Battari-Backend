@@ -8,7 +8,7 @@ class User(models.Model):
     displayname = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
     salt = models.CharField(max_length=10)
-    icon = models.ImageField(null=True)
+    icon = models.TextField()
     current_listening_track = models.CharField(max_length=30)  # max_lengthは仮設定(中身がわからないので半分放棄した)
     comment = models.CharField(max_length=30, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -19,30 +19,35 @@ class Location(models.Model):
     id = models.BigIntegerField(primary_key=True)
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+class Map(models.Model):
+    id = models.BigIntegerField(primary_key=True)
+    latitude = models.DecimalField(max_digits=9, decimal_places=6)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    spotify_id = models.CharField(max_length=30)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
 
 class Follow(models.Model):
     id = models.BigIntegerField(primary_key=True)
-    following_user_id = models.BigIntegerField()
-    follower_user_id = models.BigIntegerField()
+    # following_user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    # follower_user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
-class Artist(models.Model):
+class Notification(models.Model):
     id = models.BigIntegerField(primary_key=True)
-    Spotify_id = models.BigIntegerField()
-    name = models.CharField(max_length=100)
+    receive_user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.CharField(max_length=50)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
-class Track(models.Model):
+class UserAction(models.Model):
     id = models.BigIntegerField(primary_key=True)
-    spotify_id = models.BigIntegerField()
-    name = models.CharField(max_length=255)
-    player_url = models.TextField()
-
-
-class Album(models.Model):
-    id = models.BigIntegerField(primary_key=True)
-    spotify_id = models.BigIntegerField()
-    name = models.CharField(max_length=255)
-    release_date = models.DateTimeField(auto_now_add=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
