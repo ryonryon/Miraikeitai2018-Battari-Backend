@@ -1,2 +1,2 @@
 # Battari-Backend
-- [API設計] (https://keitatakahashi.docs.apiary.io)
+- [API設計](https://keitatakahashi.docs.apiary.io)
