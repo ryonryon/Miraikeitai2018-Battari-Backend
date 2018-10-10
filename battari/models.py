@@ -9,7 +9,7 @@ class User(models.Model):
     password = models.CharField(max_length=20)
     salt = models.CharField(max_length=10)
     icon = models.TextField()
-    current_listening_track = models.CharField(max_length=30)  # max_lengthは仮設定(中身がわからないので半分放棄した)
+    current_listening_track = models.CharField(max_length=30)
     comment = models.CharField(max_length=30, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -36,8 +36,8 @@ class Map(models.Model):
 
 class Follow(models.Model):
     id = models.BigIntegerField(primary_key=True)
-    # following_user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    # follower_user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    following_user_id = models.BigIntegerField()
+    follower_user_id = models.BigIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
 
 
