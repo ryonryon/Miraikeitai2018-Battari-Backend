@@ -5,6 +5,7 @@ from battari.util.big_auto_field import BigAutoField
 
 class User(models.Model):
     id = BigAutoField(primary_key=True)
+    spotify_id = models.CharField(max_length=30)
     displayname = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
     salt = models.CharField(max_length=10)
