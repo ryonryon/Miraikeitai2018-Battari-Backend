@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 from rest_framework import viewsets
-from battari.serializer import UserSerializer
-from .models import User
+from battari.serializer import UserSerializer, LocationSerializer
+from .models import User, Location
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -11,5 +11,5 @@ class UserViewSet(viewsets.ModelViewSet):
 
 
 class LocationViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
