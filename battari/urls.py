@@ -3,5 +3,5 @@ from .views import UserViewSet, LocationViewSet
 
 
 router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
+router.register(r'user', UserViewSet)
 router.register(r'locations', LocationViewSet)
