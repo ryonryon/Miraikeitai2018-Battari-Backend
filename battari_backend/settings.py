@@ -42,7 +42,7 @@ if not DEBUG:
     django_heroku.settings(locals())
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['battari-db.herokuapp.com']
 
 
 # Application definition
