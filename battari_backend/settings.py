@@ -94,6 +94,7 @@ WSGI_APPLICATION = 'battari_backend.wsgi.application'
 #     }
 # }
 
+'''
 # Mysql settings
 DATABASES = {
     'default': {
@@ -105,6 +106,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+'''
 
 
 # Password validation
