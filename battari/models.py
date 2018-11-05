@@ -10,9 +10,9 @@ class User(models.Model):
     icon = models.TextField(default="")
     current_listening_track = models.CharField(max_length=30)
     comment = models.CharField(max_length=30, null=True)
-    # token =
-    # firebase_token =
-    spotify_id = models.CharField(max_length=30)
+    token = models.TextField()
+    firebase_token = models.TextField()
+    spotify_id = models.TextField()
     updated_at = models.DateTimeField(auto_now=True)
 
 
