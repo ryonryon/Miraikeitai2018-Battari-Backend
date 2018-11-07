@@ -5,13 +5,13 @@ from battari.util.big_auto_field import BigAutoField
 
 class User(models.Model):
     id = BigAutoField(primary_key=True)
-    spotify_id = models.CharField(max_length=30)
+    spotify_id = models.CharField(max_length=30, default="")
     displayname = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
     salt = models.CharField(max_length=10)
     icon = models.TextField(default="")
-    firebase_token = models.CharField(max_length=160)
-    battari_token = models.CharField(max_length=50)
+    firebase_token = models.CharField(max_length=160, default="")
+    battari_token = models.CharField(max_length=50, default="")
     current_listening_track = models.CharField(max_length=30)
     comment = models.CharField(max_length=30, null=True)
     updated_at = models.DateTimeField(auto_now=True)
