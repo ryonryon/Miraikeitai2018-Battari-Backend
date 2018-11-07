@@ -11,7 +11,6 @@ from .models import User, Location
 from django.http import HttpRequest, HttpResponse
 
 
-
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -25,10 +24,11 @@ class LocationViewSet(viewsets.ModelViewSet):
 @csrf_exempt
 def firebase(request):
     if request.method == "POST":
-        posted_token = request.META["HTTP_X_BATTARI_TOKEN"]
+        posted_token = request.META["HTTP_X_TOKEN"]
         posted_firabase_token = json.loads(request.body)["token"]
+        # count_account = User.objects.only('id').count()
         obj, created = User.objects.update_or_create(
-            token=posted_token,
+            displayname=posted_token,
             defaults={'firebase_token': posted_firabase_token
                       }
         )
