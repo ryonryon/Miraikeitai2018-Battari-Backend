@@ -24,11 +24,10 @@ class LocationViewSet(viewsets.ModelViewSet):
 @csrf_exempt
 def firebase(request):
     if request.method == "POST":
-        posted_token = request.META["HTTP_X_TOKEN"]
+        posted_token = request.META["HTTP_X_BATTARI_TOKEN"]
         posted_firabase_token = json.loads(request.body)["token"]
-        # count_account = User.objects.only('id').count()
         obj, created = User.objects.update_or_create(
-            displayname=posted_token,
+            token=posted_token,
             defaults={'firebase_token': posted_firabase_token
                       }
         )
