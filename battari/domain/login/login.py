@@ -8,7 +8,7 @@ class Login:
     def token(self):
         password = Password(self.password)
         try:
-            salt = User.objects.get(spotify_id=self.user_id)
+            salt = User.objects.get(spotify_id=self.user_id).salt.encode()
             hashed_password = password.hashing(salt)
             user = User.objects.get(spotify_id=self.user_id, password=hashed_password)
         except ObjectDoesNotExist:
@@ -16,6 +16,6 @@ class Login:
 
         return user.battari_token
 
-    def __init__(self, request):
-        self.user_id = request["username"]
-        self.password = request["password"]
+    def __init__(self, data):
+        self.user_id = data["username"]
+        self.password = data["password"]

@@ -3,7 +3,7 @@ import bcrypt
 
 class Password:
     def hashing(self, salt):
-        hashed_password = bcrypt.hashpw(self.input_password, salt)
+        hashed_password = bcrypt.hashpw(self.input_password.encode(), salt).decode()
         return hashed_password
 
     @staticmethod

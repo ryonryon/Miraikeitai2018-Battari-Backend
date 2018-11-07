@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from battari import views
+from battari.urls import router
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('auth/$', views.login_controller)
+    # url('auth/$', views.login_controller),
+    # url('register/$', views.register_controller)
 ]
+
+urlpatterns += router.urls
