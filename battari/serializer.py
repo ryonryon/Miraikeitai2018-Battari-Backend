@@ -24,7 +24,7 @@ class MapSerializer(serializers.ModelSerializer):
 
 class FollowSerializer(serializers.ModelSerializer):
     class Meta:
-        model =Follow
+        model = Follow
         fields = '__all__'
 
 
