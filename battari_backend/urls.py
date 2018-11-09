@@ -20,8 +20,6 @@ from battari.urls import router
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    # url('auth/$', views.login_controller),
-    # url('register/$', views.register_controller)
+    # path('firebase', views.firebase, name='firebase'),
 ]
-
 urlpatterns += router.urls
