@@ -14,9 +14,6 @@ class User(models.Model):
     battari_token = models.CharField(max_length=100, default="")
     current_listening_track = models.CharField(max_length=30)
     comment = models.CharField(max_length=30, null=True)
-    token = models.TextField()
-    firebase_token = models.TextField()
-    spotify_id = models.TextField()
     updated_at = models.DateTimeField(auto_now=True)
 
 
