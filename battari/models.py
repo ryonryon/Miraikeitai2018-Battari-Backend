@@ -36,8 +36,8 @@ class Map(models.Model):
 
 class Follow(models.Model):
     id = BigAutoField(primary_key=True)
-    following_user_id = models.BigIntegerField()
-    follower_user_id = models.BigIntegerField()
+    following_user_id = models.CharField(max_length=30)
+    follower_user_id = models.CharField(max_length=30)
 
 
 class Notification(models.Model):
