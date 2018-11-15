@@ -31,7 +31,7 @@ STATIC_URL = '/static/'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 's_pr2&(o26)bdjuq0jhfobbu(bls@ebj#x^cv#@y9icas1%o6l'
 
-if "enPiT2016MBP-03noMacBook-Pro.local" in hostname:
+if "COMPUTER-NAME" in hostname:
     DEBUG = True
 else:
     DEBUG = False
