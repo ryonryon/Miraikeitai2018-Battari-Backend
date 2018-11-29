@@ -20,6 +20,5 @@ from battari.urls import router
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    # path('firebase', views.firebase, name='firebase'),
 ]
 urlpatterns += router.urls

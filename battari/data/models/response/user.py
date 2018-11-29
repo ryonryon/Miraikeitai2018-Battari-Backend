@@ -14,13 +14,12 @@ class Token(object):
         self.following = following
 
 
-
-class TokenSerializer(serializers.Serializer):
+class UserSerializer(serializers.Serializer):
     id = serializers.CharField(max_length=30),
     displayname = serializers.CharField(max_length=20),
     follows = serializers.BooleanField(),
     icon = serializers.CharField(),
     current_listening_track = serializers.CharField(max_length=30),
-    comment = serializers.CharField(max_length=30, null=True),
+    comment = serializers.CharField(max_length=30),
     follower = serializers.IntegerField(),
     following = serializers.IntegerField()
