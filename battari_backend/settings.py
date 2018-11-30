@@ -44,7 +44,7 @@ except ImportError:
 
 if not DEBUG:
     DATABASES['default'] = dj_database_url.config()
-
+    
 ALLOWED_HOSTS = ['battari-db.herokuapp.com', '*']
 
 # Application definition
