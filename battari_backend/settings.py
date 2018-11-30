@@ -31,7 +31,7 @@ STATIC_URL = '/static/'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 's_pr2&(o26)bdjuq0jhfobbu(bls@ebj#x^cv#@y9icas1%o6l'
 
-if "COMPUTER-NAME" in hostname:
+if ".local" in hostname:
     DEBUG = True
 else:
     DEBUG = False
@@ -45,7 +45,7 @@ except ImportError:
 if not DEBUG:
     DATABASES['default'] = dj_database_url.config()
 
-ALLOWED_HOSTS = ['battari-db.herokuapp.com']
+ALLOWED_HOSTS = ['battari-db.herokuapp.com', '*']
 
 # Application definition
 

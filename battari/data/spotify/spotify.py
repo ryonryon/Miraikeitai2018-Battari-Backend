@@ -19,7 +19,7 @@ class Spotify:
     def get_track(self, track_id):
         url = "https://api.spotify.com/v1/tracks/" + track_id
         token = self.__get_token()
-        authorization = "Bearer " + token
+        authorization = "Bearer " + token["access_token"]
         headers = {'Authorization': authorization}
         req = urllib.request.Request(url=url, headers=headers)
         with urllib.request.urlopen(req) as res:
