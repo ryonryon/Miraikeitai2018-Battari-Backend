@@ -24,7 +24,6 @@ class FirebaseViewSet(viewsets.ViewSet):
         data = serialized.validated_data
         firebase = Firebase(user)
         firebase.update_token(data["token"])
-
         return HttpResponse("OK", status=201)
 
     def get_queryset(self):

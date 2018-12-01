@@ -6,22 +6,22 @@ from rest_framework import viewsets
 
 from battari.constant import TOKEN_HEADER
 from battari.data.models.response.user import UserSerializer
-# from battari.domain.firebase.firebase import Firebase
+from battari.domain.user.user import User
 from battari.models import User
-from battari.models import Follow
 
 
 class UserViewSet(viewsets.ViewSet):
     def retrieve(self, request, pk=None):
+        user = self.get_queryset()
+        if user is None:
+            return HttpResponse("Forbidden", status=403)
+
         body = json.loads(request.body.decode())
         serialized = UserSerializer(data=body)
         if not serialized.is_valid():
             return HttpResponse("Forbidden", status=403)
 
-        user = self.get_queryset()
         data = serialized.validated_data
-        spotify_id = user.spotify_id
-        follower_num = Follow.objects.filter(follower_user_id=spotify_id).count()
 
         return HttpResponse("OK", status=201)
 
