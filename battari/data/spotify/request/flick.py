@@ -14,10 +14,11 @@ class Notification(object):
 
 
 class Data(object):
-    def __init__(self, event_type, sent_from, track_id, message):
+    def __init__(self, event_type, sent_from, track_id, user_id, message):
         self.event_type = event_type
         self.sent_from = sent_from
         self.track_id = track_id
+        self.user_id = user_id
         self.message = message
 
 
@@ -31,6 +32,7 @@ class DataSerializer(serializers.Serializer):
     event_type = serializers.CharField(max_length=7)
     sent_from = serializers.CharField(max_length=50)
     track_id = serializers.CharField(max_length=30)
+    user_id = serializers.CharField(max_length=50)
     message = serializers.CharField(max_length=200)
 
 

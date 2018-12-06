@@ -18,10 +18,11 @@ class Flick:
 
     def __data(self):
         event_type = "flick"
-        sent_from = self.user.spotify_id
+        sent_from = self.user.displayname
         track_id = self.track_id
         message = self.comment
-        data = Data(event_type, sent_from, track_id, message)
+        user_id = self.user.spotify_id
+        data = Data(event_type, sent_from, track_id, user_id, message)
         return data
 
     def __user(self):
