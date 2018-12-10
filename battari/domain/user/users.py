@@ -1,10 +1,13 @@
-from battari.models import User
 from battari.models import Follow
 
 
 class Users:
-    # def id(self):
-    #     id = User.object.get()
+    def follows(self):
+        follows = Follow.objects.filter(follower_user_id=self.my_spotify_id)
+        if follows is None:
+            return False
+        else:
+            return True
 
     def follower(self):
         follower = Follow.objects.filter(follower_user_id=self.spotify_id).count()
@@ -14,5 +17,6 @@ class Users:
         following = Follow.objects.filter(following_user_id=self.spotify_id).count()
         return following
 
-    def __init__(self, spotify_id):
-        self.spotify_id = spotify_id
+    def __init__(self, user, data):
+        self.my_spotify_id = user["spotify_id"]
+        self.spotify_id = data["spotify_id"]
