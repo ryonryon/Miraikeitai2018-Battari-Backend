@@ -17,7 +17,7 @@ class UsersViewSet(viewsets.ViewSet):
         if user is None:
             return HttpResponse("Forbidden", status=403)
 
-        data = user.objects.get(id=pk)  # detail user
+        data = User.objects.get(id=pk)  # detail user
         if data is None:
             return HttpResponse("Forbidden", status=403)
 
@@ -25,8 +25,8 @@ class UsersViewSet(viewsets.ViewSet):
         follows = users.follows()
         following = users.following()
         follower = users.follower()
-        resp = [users.id, user.displayname, follows, user.icon,
-                user.current_listening_track, user.comment, follower, following]
+        resp = [data.id, data.displayname, follows, data.icon,
+                data.current_listening_track, data.comment, follower, following]
         resp_json = JSONRenderer().render(UsersSerializer(resp).data)
 
         serialized = UsersSerializer(data=resp_json)
