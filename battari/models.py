@@ -1,6 +1,5 @@
 from django.db import models
-
-from battari.util.big_auto_field import BigAutoField
+from django.db.models import BigAutoField
 
 
 class User(models.Model):
@@ -29,7 +28,7 @@ class Map(models.Model):
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
     spotify_id = models.CharField(max_length=30)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.TextField()
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -42,10 +41,10 @@ class Follow(models.Model):
 
 class Notification(models.Model):
     id = BigAutoField(primary_key=True)
-    receive_user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    receive_user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.CharField(max_length=50)
 
 
 class UserAction(models.Model):
     id = BigAutoField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
